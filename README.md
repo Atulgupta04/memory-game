@@ -2,7 +2,6 @@
 
 This memory game is a Project for every student of the Front-End Web Nano Degree Scholarship to practice and learn more about JavaScript and Git.
 
-A game that can exercise and improve our brain memory capacity.
 
 ## Instructions
 
