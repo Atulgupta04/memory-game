@@ -21,4 +21,9 @@ A game that can exercise and improve our brain memory capacity.
 
 When loading the game you will see the Memory Game board.
 
+https://github.com/Atulgupta04/memory-game/blob/master/images/mgame1.png
+
+https://github.com/Atulgupta04/memory-game/blob/master/images/mgame2.png
+
+https://github.com/Atulgupta04/memory-game/blob/master/images/mgame3.png
 
