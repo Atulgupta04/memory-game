@@ -1,3 +1,15 @@
+/*
+  Create a list that holds all of your cards
+ */
+
+
+
+  //  Display the cards on the page
+  //    - shuffle the list of cards using the provided "shuffle" method below
+  //    - loop through each card and create its HTML
+  //    - add each card's HTML to the page
+
+
 const DECK = document.getElementById('deck');
 const OPENEL = document.body.getElementsByClassName('open');
 const SHAKEL = document.body.getElementsByClassName('shake');
@@ -12,12 +24,14 @@ let totalSeconds = 0;
 
 
 const click = (e) => {
+//function(e) the e inside the function is event to detect what event
 
+    //Checks if clicked element is a li
     if(e.target.tagName ==='LI' && !e.target.classList.contains('match')) {
         flipCard(e);
     }
 }
-
+// Shuffle function
 const shuffle = (array) => {
     var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -30,19 +44,19 @@ const shuffle = (array) => {
     }
     shuffleCards(array);
 }
-
+// function that shows the face of the card
 const flipCard = (e) => {
     e.target.classList.toggle('open');
     e.target.classList.toggle('show');
 }
 
-
+//
 const shuffleCards = (array) => {
-
+    //THIS FOR LOOP COUNTS ALL THE CHILDREN OF DECK AND REMOVES THEM
     for (let i = 0; i < DECK.childElementCount; i+0) {
         DECK.removeChild(DECK.firstChild);
     }
-
+    //THIS FOR LOOP ADDS THE SHUFFLED cards
     for (let i = 0; i < array.length; ++i) {
         DECK.appendChild(arr[i]);
     }
@@ -181,11 +195,13 @@ const verifyCard = () => {
 }
 
 (function(){
-
+/*
+*ADDS Evenet Listener on CARD element to detect which cards are being pressed
+*/
 shuffle(arr);
-
-document.body.addEventListener('click', function(e) {
-
+//THIS ADDEVENTLISTENER LISTENS TO CLICKS MADE IN THE BODY
+document.body.addEventListener('click', function(e) { // Should change transform this into function
+    //CHECKS IF THE TARGET CLICKED HAS A PARENT WITH A CLASS RESTART
     if (e.target.parentElement.className === 'restart' || e.target.className === 'restart') {
         restart(arr);
     }
@@ -194,7 +210,7 @@ document.body.addEventListener('click', function(e) {
 
     }
 
-
+    //Checks facing up cards, if greater than 2 and not matched, facedown
     if (OPENEL.length === 0 && SHAKEL.length === 0) {
         DECK.addEventListener('click', click);
 
@@ -219,3 +235,13 @@ document.body.addEventListener('click', function(e) {
 
 })();
 
+/*
+ * set up the event listener for a card. If a card is clicked:
+ *  - display the card's symbol (put this functionality in another function that you call from this one)
+ *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ *  - if the list already has another card, check to see if the two cards match
+ *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
+ *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
+ *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
+ *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ */
